@@ -10,6 +10,8 @@ public class ObstacleGenerator : MonoBehaviour
     void Start()
     {
         InitObstacles();
+        float cameraWidth = Camera.main.orthographicSize * Camera.main.aspect;
+        gameObject.transform.localPosition = new Vector3(cameraWidth, gameObject.transform.localPosition.y, gameObject.transform.localPosition.z);
     }
 
     public void GenerateObstacles()

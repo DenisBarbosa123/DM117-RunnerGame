@@ -24,6 +24,10 @@ public class Player : MonoBehaviour
         animator = gameObject.GetComponent<Animator>();
         canJump = true;
         isEnabled = false;
+
+        float cameraWidth = Camera.main.orthographicSize * Camera.main.aspect;
+        startPlayerPosition.localPosition = new Vector3(gameObject.transform.localScale.x - cameraWidth, startPlayerPosition.localPosition.y, startPlayerPosition.localPosition.z);
+        gameObject.transform.localPosition = startPlayerPosition.localPosition;
     }
 
     public void SetActive()
