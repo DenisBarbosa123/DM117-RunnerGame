@@ -64,6 +64,10 @@ public class GameController : MonoBehaviour
         GameStart();
     }
 
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
     private void CheckLevelUpdate()
     {
         if (currentLevelIndex >= levels.Length - 1) return;
